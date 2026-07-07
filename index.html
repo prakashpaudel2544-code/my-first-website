@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyGoal Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js for beautiful report graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app">
+        <h1>💰 MoneyGoal Pro v2</h1>
+        <p class="subtitle">Plan your money. Build your future.</p>
+
+        <div class="grid">
+            <!-- Left Side: Inputs -->
+            <div class="card">
+                <h2>📊 Financial Inputs</h2>
+                
+                <div class="input-group">
+                    <label for="salary">Monthly Net Salary (Rs.)</label>
+                    <input type="number" id="salary" placeholder="e.g. 50000" oninput="calculate()">
+                </div>
+
+                <div class="input-group">
+                    <label for="expense">Monthly Expenses (Rs.)</label>
+                    <input type="number" id="expense" placeholder="e.g. 30000" oninput="calculate()">
+                </div>
+
+                <div class="input-group">
+                    <label for="emSave">Emergency Fund Monthly Contribution (Rs.)</label>
+                    <input type="number" id="emSave" placeholder="e.g. 5000" oninput="calculate()">
+                </div>
+
+                <div class="input-group">
+                    <label for="emergency">Current Emergency Fund Saved (Rs.)</label>
+                    <input type="number" id="emergency" placeholder="e.g. 15000" oninput="calculate()">
+                </div>
+
+                <div class="input-group">
+                    <label for="goal">Your Financial Goal Amount (Rs.)</label>
+                    <input type="number" id="goal" placeholder="e.g. 200000" oninput="calculate()">
+                </div>
+
+                <div class="input-group">
+                    <label for="age">Your Current Age</label>
+                    <input type="number" id="age" placeholder="e.g. 25" oninput="calculate()">
+                </div>
+                
+                <button onclick="calculate()">Recalculate Roadmap</button>
+            </div>
+
+            <!-- Right Side: Results & Chart -->
+            <div class="right-column">
+                <div class="card" id="result">
+                    <h2>📊 Your Financial Roadmap</h2>
+                    <p style="color: #94a3b8;">कृपया आफ्नो हिसाब हेर्न बायाँपट्टि विवरणहरू भर्नुहोस्।</p>
+                </div>
+
+                <div class="card">
+                    <h2>📈 Budget Allocation</h2>
+                    <canvas id="chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
